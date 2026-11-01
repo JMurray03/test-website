@@ -1,0 +1,84 @@
+.hero-scenic__backdrop {
+  background:
+    radial-gradient(
+      ellipse at 76% 64%,
+      color-mix(in oklab, var(--primary) 34%, transparent),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--hero-background) 88%, var(--primary)) 0%,
+      var(--hero-background) 52%,
+      color-mix(in oklab, var(--hero-background) 84%, var(--hero-foreground)) 100%
+    );
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-scenic__backdrop--image {
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-scenic__backdrop::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--hero-background) 4%, transparent),
+    color-mix(in oklab, var(--hero-background) 28%, transparent)
+  );
+  content: "";
+}
+
+.hero-scenic__sun {
+  top: 20%;
+  right: 22%;
+  width: clamp(5rem, 12vw, 9rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: color-mix(in oklab, var(--primary) 82%, var(--hero-foreground));
+  box-shadow: 0 0 6rem color-mix(in oklab, var(--primary) 42%, transparent);
+}
+
+.hero-scenic__ridge {
+  right: -12%;
+  bottom: -19%;
+  left: -12%;
+  height: 48%;
+  border-radius: 50% 50% 0 0 / 38% 38% 0 0;
+}
+
+.hero-scenic__ridge--far {
+  bottom: -4%;
+  left: -34%;
+  height: 44%;
+  background: linear-gradient(
+    165deg,
+    color-mix(in oklab, var(--primary) 32%, var(--hero-background)),
+    color-mix(in oklab, var(--hero-foreground) 24%, var(--hero-background)) 70%
+  );
+  transform: rotate(-7deg);
+}
+
+.hero-scenic__ridge--near {
+  background: linear-gradient(
+    150deg,
+    color-mix(in oklab, var(--hero-foreground) 22%, var(--hero-background)),
+    var(--hero-background) 78%
+  );
+  transform: rotate(3deg);
+}
+
+@media (max-width: 640px) {
+  .hero-scenic__sun {
+    top: 17%;
+    right: 12%;
+  }
+
+  .hero-scenic__ridge {
+    right: -40%;
+    left: -40%;
+    height: 35%;
+  }
+}
